@@ -1,0 +1,36 @@
+5 Levels Of Text Splitting
+Ever try to put a long piece of text into ChatGPT but it tells you it’s too long? Or you're trying to give your application better long term memory, but it’s still just not quite working.
+
+One of the most effective strategies to improve performance of your language model applications is to split your large data into smaller pieces. This is call splitting or chunking (we'll use these terms interchangeably). In the world of multi-modal, splitting also applies to images.
+
+We are going to cover a lot, but if you make it to the end, I guarantee you’ll have a solid grasp on chunking theory, strategies, and resources to learn more.
+
+Levels Of Text Splitting
+
+Level 1: Character Splitting - Simple static character chunks of data
+Level 2: Recursive Character Text Splitting - Recursive chunking based on a list of separators
+Level 3: Document Specific Splitting - Various chunking methods for different document types (PDF, Python, Markdown)
+Level 4: Semantic Splitting - Embedding walk based chunking
+Level 5: Agentic Splitting - Experimental method of splitting text with an agent-like system.
+This tutorial will use code from LangChain (pip install langchain)
+
+Evaluations
+
+It's important to test your chunking strategies in retrieval evals. It doesn't matter how you chunk if the performance of your application isn't great.
+
+Eval Frameworks:
+
+LangChain Evals
+Llama Index Evals
+RAGAS Evals
+Level 1: Character Splitting
+Character splitting is the most basic form of splitting up your text. It is the process of simply dividing your text into N-character sized chunks regardless of their content or form.
+
+This method isn't recommended for any applications - but it's a great starting point for us to understand the basics.
+
+Pros: Easy & Simple
+Cons: Very rigid and doesn't take into account the structure of your text
+Concepts to know:
+
+Chunk Size - The number of characters you would like in your chunks. 50, 100, 100,000, etc.
+Chunk Overlap - The amount you would like your sequential chunks to overlap. This is to try to avoid cutting a single piece of context into multiple pieces. This will create duplicate data across chunks.
